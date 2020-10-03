@@ -1,0 +1,39 @@
+
+.list{
+    background: #a87ea5;;
+    color: #fff !important;
+    border-radius: 0.4rem;
+    display: block;
+    width: 100%;
+    border:none;
+    position: relative;
+    box-sizing: 100%;
+}
+
+.container {
+    color: #fff;
+    max-width: 500px;
+    margin: auto;
+    font-size: 25px;
+  }
+
+.todo-input{
+    display: inline;
+    margin: 0;
+    border: none;
+    border-radius: 0.4rem;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.todo-button{
+    margin: 20px;
+}
+
+.buttons{
+margin-left: 5px;
+}
+
+.home{
+    padding: 100px 0px ;
+}
