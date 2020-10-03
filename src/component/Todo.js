@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import TodoForm from './TodoForm';
 import { RiCloseCircleLine, RiEdit2Line } from 'react-icons/ri'
+import '../App.css'
 // import { RiEdit2Line } from 'react-icon/ri';
 // import { Edit } from '@material-ui/icons';
 
@@ -24,20 +25,31 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
 
 
     return todos.map((todo, index) => (
-        <div className={todo.isComplete ? 'todo-row complete' : 'todo-row'} key={index}>
+        <div className="container list">
+            <ul>
+                <li>
+                    <div className="row">
+                        <div className="col-6 text-center">
+                            <div className={todo.isComplete ? 'todo-row complete' : 'todo-row'} key={index}>
 
-            <div key={todo.id} onClick={() => completeTodo(todo.id)}>
-                {todo.text}
-            </div>
-            <div className="icons">
-                <RiCloseCircleLine onClick={() => removeTodo(todo.id)} className='delete-icon' />
-                <RiEdit2Line onClick={() => setEdit({ id: todo.id, value: todo.text })} className='edit-icon' />
-                {/* <TiEdit /> */}
+                                <div key={todo.id} onClick={() => completeTodo(todo.id)}>
+                                    {<h3>{todo.text}</h3>}
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-6">
+                            <div className="text-center">
+                                    <button onClick={() => removeTodo(todo.id)} className='btn btn-danger buttons'> Remove</button>
+                                    <button onClick={() => setEdit({ id: todo.id, value: todo.text })} className='btn btn-info buttons'> Edit </button>
+                                </div>
+                                    {/* <TiEdit /> */}
 
-                {/* <Edit /> */}
-            </div>
+                                    {/* <Edit /> */}
 
-
+                        </div>
+                    </div>
+                </li>
+            </ul>        
         </div>
     ))
 }
